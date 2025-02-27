@@ -18,6 +18,7 @@
         <module>Countconstruct</module>
         <module>AllConstruct</module>
         <module>MinimumFallingPathsum</module>
+        <module>MaxProfit</module>
     </modules>
 
     <properties>
