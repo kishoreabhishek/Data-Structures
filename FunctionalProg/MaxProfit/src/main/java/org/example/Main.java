@@ -1,6 +1,8 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Optional;
 
 public class Main {
     public static HashMap<String,HashMap<Integer,Integer>> pfTable;
@@ -39,12 +41,10 @@ public class Main {
         int tprofit=0;
         if(fruitsused.length()==2){
             System.out.println("fruitsused" + " " + fruitsused);
-            for(String s:new String[]{"J","P","D"}){
-                if(!fruitsused.contains(s)){
-                    return pfTable.get(s).get(target);
-                }
-            }
-
+            String st =Arrays.stream(new String[]{"J","P","D"})
+                    .filter(s->!fruitsused.contains(s))
+                    .findFirst().orElse("");
+            return pfTable.get(st).get(target);
         }
         for(int i=1;i<=target;i++){
             for(String s:new String[]{"J","P","D"}){
