@@ -40,7 +40,7 @@ public class Main {
         int tmaxprofit =0;
         int tprofit=0;
         if(fruitsused.length()==2){
-            System.out.println("fruitsused" + " " + fruitsused);
+//            System.out.println("fruitsused" + " " + fruitsused);
             String st =Arrays.stream(new String[]{"J","P","D"})
                     .filter(s->!fruitsused.contains(s))
                     .findFirst().orElse("");
