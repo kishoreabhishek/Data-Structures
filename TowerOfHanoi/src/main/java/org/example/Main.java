@@ -5,8 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
+import static java.lang.Math.pow;
+
 public class Main {
     static List<Stack<Integer>> axes;
+    static int cnt=0;
     public static void main(String[] args) {
         axes = new ArrayList<>();
         axes.add(new Stack<>());
@@ -18,9 +21,11 @@ public class Main {
         }
         createHanoi(0,2,noOfDiscs);
         System.out.println(axes.get(2));
-
+        assert (cnt == pow(2,noOfDiscs)-1);
+        System.out.println(cnt);
     }
     public static void createHanoi(int startindex,int targetindex,int noOfDiscs){
+        cnt=cnt+1;
         if(noOfDiscs == 1) {
             int td = axes.get(startindex).pop();
             if(!axes.get(targetindex).isEmpty() && axes.get(targetindex).peek()<td){
